@@ -1,4 +1,4 @@
-import 'package:doc2heal_admin/login_screen.dart';
+import 'package:doc2heal_admin/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

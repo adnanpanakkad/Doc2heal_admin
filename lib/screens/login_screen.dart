@@ -1,18 +1,19 @@
-import 'package:doc2heal_admin/otp_screen.dart';
+import 'package:doc2heal_admin/screens/bottombar_screen.dart';
+import 'package:doc2heal_admin/screens/home_screen.dart';
 import 'package:doc2heal_admin/services/firebase/firebase_auth.dart';
 import 'package:doc2heal_admin/widgets/auth_button.dart';
-import 'package:doc2heal_admin/widgets/constants/rich_text.dart';
 import 'package:doc2heal_admin/widgets/constants/custom_textstyle.dart';
+import 'package:doc2heal_admin/widgets/constants/rich_text.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  LoginScreenState createState() => LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,9 +49,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     SizedBox(height: 20),
                     AuthButton(
-                        text: 'Sigin with Google',
+                        text: 'Sign in with Google',
                         onTap: () async {
-                          AuthenticationRepository.googleSignIn();
+                          // Perform Google sign-in
+                          await AuthenticationRepository.googleSignIn();
+                          print('SIGIN IN GOOGLE ok');
+                          // Once sign-in is successful, navigate to BottombarScreen
+                          Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                              builder: (context) => const BottomBarScreen(),
+                            ),
+                          );
                         },
                         imagpath: 'assets/2702602.png'),
                     const SizedBox(height: 20),

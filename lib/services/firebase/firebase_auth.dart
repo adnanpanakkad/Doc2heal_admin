@@ -1,6 +1,5 @@
 import 'dart:developer';
-
-import 'package:doc2heal_admin/bottombar_screen.dart';
+import 'package:doc2heal_admin/screens/bottombar_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';

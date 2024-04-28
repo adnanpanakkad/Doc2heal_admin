@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "780277909387",
+    "project_id": "doc2heal-8428c",
+    "storage_bucket": "doc2heal-8428c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780277909387:android:a13a6f59b337492d93d18e",
+        "android_client_info": {
+          "package_name": "com.example.doc2heal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780277909387-ug6mj3ghrm4vpv60ms8i57j7njhc4jml.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.doc2heal",
+            "certificate_hash": "b2478bd3482c3a69ead08d91a06d01449d8481e0"
+          }
+        },
+        {
+          "client_id": "780277909387-dd7skcls8guua8ug9lpuf8p1a23ngdai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6qLMOOOhkVobmanfQgalMpjWOsv519FE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780277909387-dd7skcls8guua8ug9lpuf8p1a23ngdai.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "780277909387-jc3027vqfs1lu8b0grc89kdot7nen88q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.doc2healDoctor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780277909387:android:27754dc139a42a9b93d18e",
+        "android_client_info": {
+          "package_name": "com.example.doc2heal_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780277909387-dd7skcls8guua8ug9lpuf8p1a23ngdai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6qLMOOOhkVobmanfQgalMpjWOsv519FE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780277909387-dd7skcls8guua8ug9lpuf8p1a23ngdai.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "780277909387-jc3027vqfs1lu8b0grc89kdot7nen88q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.doc2healDoctor"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780277909387:android:81dc87db5496b1cf93d18e",
+        "android_client_info": {
+          "package_name": "com.example.doc2heal_doctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780277909387-dd7skcls8guua8ug9lpuf8p1a23ngdai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6qLMOOOhkVobmanfQgalMpjWOsv519FE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780277909387-dd7skcls8guua8ug9lpuf8p1a23ngdai.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "780277909387-jc3027vqfs1lu8b0grc89kdot7nen88q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.doc2healDoctor"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
