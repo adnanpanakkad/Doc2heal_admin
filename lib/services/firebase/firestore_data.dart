@@ -14,15 +14,14 @@ class DoctorRepository {
   }
 
   /// Function to fetch user data from Firestore by user ID
-   Stream<QuerySnapshot<Map<String, dynamic>>> getDoctors() {
+  Stream<QuerySnapshot<Map<String, dynamic>>> getDoctors() {
     return _db.collection("doctor").snapshots();
   }
 
-
   /// Function to delete user data from Firestore by user ID
-  Future<void> deleteDoctorData(String userId) async {
+  Future<void> deleteDoctorData(String id) async {
     try {
-      await _db.collection("doctor").doc(userId).delete();
+      await _db.collection("doctor").doc(id).delete();
     } catch (e) {
       throw 'not deleted';
     }

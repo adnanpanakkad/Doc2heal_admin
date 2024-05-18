@@ -41,8 +41,10 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          DoctorDetailsScreen(doctorData: doctorData),
+                      builder: (context) => DoctorDetailsScreen(
+                        doctorData: doctorData,
+                        userId: doctorData['id'],
+                      ),
                     ),
                   );
                 },
