@@ -14,23 +14,10 @@ class DoctorRepository {
   }
 
   /// Function to fetch user data from Firestore by user ID
-  Future<DoctorModel> getDoctorById(String userId) async {
-    try {
-      DocumentSnapshot userSnapshot =
-          await _db.collection("doctor").doc(userId).get();
-
-      if (userSnapshot.exists) {
-        Map<String, dynamic> userData =
-            userSnapshot.data() as Map<String, dynamic>;
-
-        return DoctorModel.fromJson(userData);
-      } else {
-        throw Exception('User not found');
-      }
-    } catch (e) {
-      throw 'not found data';
-    }
+   Stream<QuerySnapshot<Map<String, dynamic>>> getDoctors() {
+    return _db.collection("doctor").snapshots();
   }
+
 
   /// Function to delete user data from Firestore by user ID
   Future<void> deleteDoctorData(String userId) async {

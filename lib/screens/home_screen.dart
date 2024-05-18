@@ -1,4 +1,5 @@
 import 'package:doc2heal_admin/screens/doctors_list.dart';
+import 'package:doc2heal_admin/services/firebase/firestore_data.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -13,14 +14,14 @@ class HomeScreen extends StatelessWidget {
         title: Text('Doctors List'),
       ),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-        stream: FirebaseFirestore.instance.collection('doctor').snapshots(),
+        stream: DoctorRepository().getDoctors(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return Text('Something went wrong!');
+            return Center(child: Text('Something went wrong!'));
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return CircularProgressIndicator();
+            return Center(child: CircularProgressIndicator());
           }
 
           return ListView.builder(
@@ -28,14 +29,14 @@ class HomeScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               Map<String, dynamic> doctorData =
                   snapshot.data!.docs[index].data() as Map<String, dynamic>;
-              // Inside your ListView.builder itemBuilder
               return ListTile(
                 leading: CircleAvatar(
-                  child: Image.network(doctorData['imagepath']),
-                ), // Display the doctor's photo
-                title: Text(doctorData['name']), // Display the doctor's name
+                  backgroundImage: NetworkImage(doctorData['imagepath'] ??
+                      ''), // Ensure image path is valid
+                ),
+                title: Text(doctorData['name'] ?? ''), // Ensure name is valid
                 subtitle: Text(
-                    doctorData['birthday']), // Display the doctor's birthday
+                    doctorData['birthday'] ?? ''), // Ensure birthday is valid
                 onTap: () {
                   Navigator.push(
                     context,
