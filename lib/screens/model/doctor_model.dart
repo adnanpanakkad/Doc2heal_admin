@@ -1,12 +1,13 @@
 class DoctorModel {
   String? imagepath;
   String? expcerft;
-  final String name;
-  final String phone;
-  final String gender;
-  final String birthday;
-  final String email;
-  final String password;
+  final String? name;
+  final String? phone;
+  final String? gender;
+  final String? birthday;
+  final String? email;
+  final String? password;
+  final String? id;
 
   DoctorModel({
     required this.imagepath,
@@ -17,6 +18,7 @@ class DoctorModel {
     required this.birthday,
     required this.email,
     required this.password,
+    required this.id,
   });
 
   // Factory constructor to create UserModel from JSON data
@@ -30,6 +32,7 @@ class DoctorModel {
       birthday: json['birthday'],
       email: json['email'],
       password: json['password'],
+      id: json['id'],
     );
   }
   Map<String, dynamic> toJson() {
@@ -42,6 +45,7 @@ class DoctorModel {
       'birthday': birthday,
       'email': email,
       'password': password,
+      'id': id,
     };
   }
 }

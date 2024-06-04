@@ -15,7 +15,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    ProfileScreeen(), // Corrected here
+    ProfileScreen(), // Corrected here
   ];
 
   void _onItemTapped(int index) {

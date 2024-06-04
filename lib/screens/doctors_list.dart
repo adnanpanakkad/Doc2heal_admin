@@ -1,5 +1,5 @@
 import 'package:doc2heal_admin/services/firebase/firestore_data.dart';
-import 'package:doc2heal_admin/widgets/constants/doclist.dart/build_row.dart';
+import 'package:doc2heal_admin/widgets/doclist.dart/build_row.dart';
 import 'package:doc2heal_admin/widgets/custom_snackbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class DoctorDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Doctor Details'),
+        title: const Text('Doctor Details'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -51,36 +51,36 @@ class DoctorDetailsScreen extends StatelessWidget {
                       rowTile('Specialization', doctorData!['specialization']),
                       rowTile('Email', doctorData!['email']),
                       const SizedBox(height: 16),
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green, width: 3),
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        child: Image.network(
-                          doctorData!['expcerft'] ??
-                              'assets/Mobile login-bro.png',
-                          height: 300,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
-                          loadingBuilder: (BuildContext context, Widget child,
-                              ImageChunkEvent? loadingProgress) {
-                            if (loadingProgress == null) {
-                              return child;
-                            } else {
-                              return Center(
-                                child: CircularProgressIndicator(
-                                  value: loadingProgress.expectedTotalBytes !=
-                                          null
-                                      ? loadingProgress.cumulativeBytesLoaded /
-                                          (loadingProgress.expectedTotalBytes ??
-                                              1)
-                                      : null,
-                                ),
-                              );
-                            }
-                          },
-                        ),
-                      ),
+                      // Container(
+                      //   decoration: BoxDecoration(
+                      //     border: Border.all(color: Colors.green, width: 3),
+                      //     borderRadius: BorderRadius.circular(50),
+                      //   ),
+                      //   child: Image.network(
+                      //     doctorData!['expcerft'] ??
+                      //         'assets/Mobile login-bro.png',
+                      //     height: 300,
+                      //     width: double.infinity,
+                      //     fit: BoxFit.cover,
+                      //     loadingBuilder: (BuildContext context, Widget child,
+                      //         ImageChunkEvent? loadingProgress) {
+                      //       if (loadingProgress == null) {
+                      //         return child;
+                      //       } else {
+                      //         return Center(
+                      //           child: CircularProgressIndicator(
+                      //             value: loadingProgress.expectedTotalBytes !=
+                      //                     null
+                      //                 ? loadingProgress.cumulativeBytesLoaded /
+                      //                     (loadingProgress.expectedTotalBytes ??
+                      //                         1)
+                      //                 : null,
+                      //           ),
+                      //         );
+                      //       }
+                      //     },
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
@@ -91,30 +91,32 @@ class DoctorDetailsScreen extends StatelessWidget {
                 children: [
                   ElevatedButton.icon(
                     onPressed: () async {
-                      await DoctorRepository().deleteDoctorData(userId!);
+                      await DoctorRepository()
+                          .deleteDoctorData(doctorData!['id']);
                       Snacbar.customSnack('Approved', context, Colors.red);
                       Navigator.pop(context);
                     },
-                    icon: Icon(Icons.cancel),
-                    label: Text('Reject'),
+                    icon: const Icon(Icons.cancel),
+                    label: const Text('Reject'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                      textStyle: TextStyle(fontSize: 16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 15),
+                      textStyle: const TextStyle(fontSize: 16),
                     ),
                   ),
                   ElevatedButton.icon(
                     onPressed: () {
                       Snacbar.customSnack('Approved', context, Colors.green);
+                      Navigator.pop(context);
                     },
-                    icon: Icon(Icons.check),
-                    label: Text('Approve'),
+                    icon: const Icon(Icons.check),
+                    label: const Text('Approve'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                      textStyle: TextStyle(fontSize: 16),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 15),
+                      textStyle: const TextStyle(fontSize: 16),
                     ),
                   ),
                 ],
