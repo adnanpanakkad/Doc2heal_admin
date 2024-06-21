@@ -36,7 +36,7 @@ class HomeScreen extends StatelessWidget {
                 textColor: Colors.black, // Optional: Set text color
                 leading: CircleAvatar(
                   radius: 30,
-                  backgroundImage: NetworkImage(doctorData['imagepath'] ?? ''),
+                  backgroundImage: NetworkImage(doctorData['doctorimg'] ?? ''),
                   backgroundColor: Colors
                       .grey[200], // Optional: Set background color for avatar
                 ),

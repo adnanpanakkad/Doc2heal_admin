@@ -1,5 +1,5 @@
 class DoctorModel {
-  String? imagepath;
+  String? doctorimg;
   String? expcerft;
   final String? name;
   final String? phone;
@@ -10,7 +10,7 @@ class DoctorModel {
   final String? id;
 
   DoctorModel({
-    required this.imagepath,
+    required this.doctorimg,
     this.expcerft,
     required this.name,
     required this.phone,
@@ -24,7 +24,7 @@ class DoctorModel {
   // Factory constructor to create UserModel from JSON data
   factory DoctorModel.fromJson(Map<String, dynamic> json) {
     return DoctorModel(
-      imagepath: json['imagepath'],
+      doctorimg: json['doctorimg'],
       expcerft: json['expcerft'],
       name: json['name'],
       phone: json['phone'],
@@ -37,7 +37,7 @@ class DoctorModel {
   }
   Map<String, dynamic> toJson() {
     return {
-      'imagepath': imagepath,
+      'doctorimg': doctorimg,
       'expcerft': expcerft,
       'name': name,
       'phone': phone,

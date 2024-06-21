@@ -29,7 +29,7 @@ class DoctorDetailsScreen extends StatelessWidget {
             children: [
               Center(
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(doctorData!['imagepath'] ?? ''),
+                  backgroundImage: NetworkImage(doctorData!['doctorimg'] ?? ''),
                   radius: 50,
                 ),
               ),
@@ -51,36 +51,36 @@ class DoctorDetailsScreen extends StatelessWidget {
                       rowTile('Specialization', doctorData!['specialization']),
                       rowTile('Email', doctorData!['email']),
                       const SizedBox(height: 16),
-                      // Container(
-                      //   decoration: BoxDecoration(
-                      //     border: Border.all(color: Colors.green, width: 3),
-                      //     borderRadius: BorderRadius.circular(50),
-                      //   ),
-                      //   child: Image.network(
-                      //     doctorData!['expcerft'] ??
-                      //         'assets/Mobile login-bro.png',
-                      //     height: 300,
-                      //     width: double.infinity,
-                      //     fit: BoxFit.cover,
-                      //     loadingBuilder: (BuildContext context, Widget child,
-                      //         ImageChunkEvent? loadingProgress) {
-                      //       if (loadingProgress == null) {
-                      //         return child;
-                      //       } else {
-                      //         return Center(
-                      //           child: CircularProgressIndicator(
-                      //             value: loadingProgress.expectedTotalBytes !=
-                      //                     null
-                      //                 ? loadingProgress.cumulativeBytesLoaded /
-                      //                     (loadingProgress.expectedTotalBytes ??
-                      //                         1)
-                      //                 : null,
-                      //           ),
-                      //         );
-                      //       }
-                      //     },
-                      //   ),
-                      // ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.green, width: 3),
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: Image.network(
+                          doctorData!['expcerft'] ??
+                              'assets/Mobile login-bro.png',
+                          height: 300,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                          loadingBuilder: (BuildContext context, Widget child,
+                              ImageChunkEvent? loadingProgress) {
+                            if (loadingProgress == null) {
+                              return child;
+                            } else {
+                              return Center(
+                                child: CircularProgressIndicator(
+                                  value: loadingProgress.expectedTotalBytes !=
+                                          null
+                                      ? loadingProgress.cumulativeBytesLoaded /
+                                          (loadingProgress.expectedTotalBytes ??
+                                              1)
+                                      : null,
+                                ),
+                              );
+                            }
+                          },
+                        ),
+                      ),
                     ],
                   ),
                 ),

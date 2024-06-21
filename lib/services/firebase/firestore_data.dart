@@ -14,7 +14,7 @@ class DoctorRepository {
       String imageUrl = await getImageUrl(imageFile);
 
       // Include the image URL in the doctor model
-      doctor.imagepath = imageUrl;
+      doctor.doctorimg = imageUrl;
       await _db.collection("doctor").doc(id).set(doctor.toJson());
     } catch (e) {
       throw 'not saved';
