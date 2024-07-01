@@ -1,4 +1,6 @@
 import 'package:doc2heal_admin/screens/login_screen.dart';
+import 'package:doc2heal_admin/widgets/constants/appbar.dart';
+import 'package:doc2heal_admin/widgets/home/appbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -8,9 +10,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Profile Screen'),
-      ),
+      appBar: HomeAppbar(text: 'Profile'),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

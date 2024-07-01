@@ -1,5 +1,6 @@
+import 'package:doc2heal_admin/widgets/home/appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:doc2heal_admin/screens/doctors_list.dart';
+import 'package:doc2heal_admin/screens/doctors_detailes.dart';
 import 'package:doc2heal_admin/services/firebase/firestore_data.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -9,10 +10,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text('Doctors List'),
-      ),
+      backgroundColor: Colors.white,
+      appBar: HomeAppbar(text: 'Doctors List'),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
         stream: DoctorRepository().getDoctors(),
         builder: (context, snapshot) {
@@ -42,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 title: Text(
                   doctorData['name'] ?? '',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),

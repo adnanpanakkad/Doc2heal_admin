@@ -27,9 +27,9 @@ class DoctorRepository {
   }
 
   /// Function to delete user data from Firestore by user ID
-  Future<void> deleteDoctorData(String userId) async {
+  Future<void> deleteDoctorData(String id) async {
     try {
-      await _db.collection("doctor").doc(userId).delete();
+      await _db.collection("doctor").doc(id).delete();
     } catch (e) {
       throw 'not deleted';
     }

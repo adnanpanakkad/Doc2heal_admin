@@ -1,4 +1,5 @@
 import 'package:doc2heal_admin/services/firebase/firestore_data.dart';
+import 'package:doc2heal_admin/widgets/constants/appbar.dart';
 import 'package:doc2heal_admin/widgets/doclist.dart/build_row.dart';
 import 'package:doc2heal_admin/widgets/custom_snackbar.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,9 +19,9 @@ class DoctorDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Doctor Details'),
-      ),
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(70),
+          child: DeatialAppbar(text: 'Doctor Details')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -53,8 +54,8 @@ class DoctorDetailsScreen extends StatelessWidget {
                       const SizedBox(height: 16),
                       Container(
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green, width: 3),
-                          borderRadius: BorderRadius.circular(50),
+                          border: Border.all(color: Colors.green, width: 1),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         child: Image.network(
                           doctorData!['expcerft'] ??
@@ -91,10 +92,10 @@ class DoctorDetailsScreen extends StatelessWidget {
                 children: [
                   ElevatedButton.icon(
                     onPressed: () async {
-                      await DoctorRepository()
-                          .deleteDoctorData(doctorData!['id']);
-                      Snacbar.customSnack('Approved', context, Colors.red);
+                      DoctorRepository().deleteDoctorData(userId!);
                       Navigator.pop(context);
+                      await Snacbar.customSnack(
+                          'Approved', context, Colors.red);
                     },
                     icon: const Icon(Icons.cancel),
                     label: const Text('Reject'),
