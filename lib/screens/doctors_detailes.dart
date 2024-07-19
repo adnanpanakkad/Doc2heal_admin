@@ -2,9 +2,7 @@ import 'package:doc2heal_admin/services/firebase/firestore_data.dart';
 import 'package:doc2heal_admin/widgets/constants/appbar.dart';
 import 'package:doc2heal_admin/widgets/doclist.dart/build_row.dart';
 import 'package:doc2heal_admin/widgets/custom_snackbar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class DoctorDetailsScreen extends StatelessWidget {
   final Map<String, dynamic>? doctorData;
@@ -51,6 +49,7 @@ class DoctorDetailsScreen extends StatelessWidget {
                       rowTile('Gender', doctorData!['gender']),
                       rowTile('Specialization', doctorData!['specialization']),
                       rowTile('Email', doctorData!['email']),
+                      rowTile('Fees', doctorData!['fees']),
                       const SizedBox(height: 16),
                       Container(
                         decoration: BoxDecoration(
@@ -92,10 +91,15 @@ class DoctorDetailsScreen extends StatelessWidget {
                 children: [
                   ElevatedButton.icon(
                     onPressed: () async {
-                      DoctorRepository().deleteDoctorData(userId!);
-                      Navigator.pop(context);
-                      await Snacbar.customSnack(
-                          'Approved', context, Colors.red);
+                      try {
+                        Snacbar.customSnack('Rejected', context, Colors.red);
+                        Navigator.pop(context);
+                        await DoctorRepository()
+                            .deleteDoctorData(doctorData!['uid']);
+                      } catch (e) {
+                        // Display error message to the user
+                        Snacbar.customSnack('Error: $e', context, Colors.red);
+                      }
                     },
                     icon: const Icon(Icons.cancel),
                     label: const Text('Reject'),
