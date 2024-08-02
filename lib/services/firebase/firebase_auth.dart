@@ -1,18 +1,19 @@
 import 'dart:developer';
-import 'package:doc2heal_admin/screens/bottombar_screen.dart';
+import 'package:doc2heal_admin/view/bottombar_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
 
 class AuthenticationRepository {
   static final FirebaseAuth _auth = FirebaseAuth.instance;
   static User? currentUser = FirebaseAuth.instance.currentUser;
 
-
   static Future<void> googleSignIn() async {
     try {
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      final GoogleSignInAccount? googleUser = await GoogleSignIn(
+        clientId:
+            '780277909387-2vppbtlu4a8bpsjqfj8e191nma9vgrdc.apps.googleusercontent.com',
+      ).signIn();
       final GoogleSignInAuthentication? googleAuth =
           await googleUser?.authentication;
 

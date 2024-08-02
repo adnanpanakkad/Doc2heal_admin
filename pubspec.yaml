@@ -41,9 +41,16 @@ dependencies:
   google_sign_in: ^6.2.1
   cloud_firestore: ^4.14.0
   firebase: ^9.0.3
+  google_fonts: ^4.0.4
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/a-sleek-and-modern-logo-design-for-an-online-docto-Lm2zooFSR52d-15JaWl9Mw-H_6fHzfOTLKcw2PPcQHtxQ.jpeg"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -69,7 +76,8 @@ flutter:
     - assets\Mobile login-bro.png
     - assets\2702602.png
     - assets\smartphone-call_15874.png
-
+    - assets\a-sleek-and-modern-logo-design-for-an-online-docto-Lm2zooFSR52d-15JaWl9Mw-H_6fHzfOTLKcw2PPcQHtxQ.jpeg
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

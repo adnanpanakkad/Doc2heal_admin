@@ -8,16 +8,18 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      automaticallyImplyLeading: false,
-      centerTitle: true,
-      title: Text(
-        text,
-        style: CustomTextStyle.buttonTextStyle,
+    return SafeArea(
+      child: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Text(
+          text,
+          style: CustomTextStyle.buttonTextStyle,
+        ),
+        toolbarHeight: 70,
+        elevation: 0,
+        backgroundColor: Appcolor.primaryColor,
       ),
-      toolbarHeight: 70,
-      elevation: 0,
-      backgroundColor: Appcolor.primaryColor,
     );
   }
 

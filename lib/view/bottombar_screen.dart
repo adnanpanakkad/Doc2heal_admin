@@ -1,5 +1,5 @@
-import 'package:doc2heal_admin/screens/home_screen.dart';
-import 'package:doc2heal_admin/screens/profile_screen.dart';
+import 'package:doc2heal_admin/view/home_screen.dart';
+import 'package:doc2heal_admin/view/settigs_screen.dart';
 import 'package:doc2heal_admin/widgets/constants/app_color.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    ProfileScreen(), // Corrected here
+    SettigsScreen(), // Corrected here
   ];
 
   void _onItemTapped(int index) {
@@ -37,9 +37,9 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person,
+              Icons.settings,
             ),
-            label: 'Profile',
+            label: 'Settings',
           ),
         ],
         currentIndex: _selectedIndex,

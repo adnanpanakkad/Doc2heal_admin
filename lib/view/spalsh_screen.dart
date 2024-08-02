@@ -1,4 +1,4 @@
-import 'package:doc2heal_admin/screens/login_screen.dart';
+import 'package:doc2heal_admin/view/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,15 +12,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     gotosplash();
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(53, 221, 130, 1),
-      body: Center(
-        child: Image.asset(
-          alignment: Alignment.center,
-          height: 120,
-          width: 150,
-          fit: BoxFit.fill,
-          'assets/LogoappLogo.png',
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color.fromRGBO(53, 221, 130, 1),
+        body: Center(
+          child: Image.asset(
+            alignment: Alignment.center,
+            height: 120,
+            width: 150,
+            fit: BoxFit.fill,
+            'assets/LogoappLogo.png',
+          ),
         ),
       ),
     );
