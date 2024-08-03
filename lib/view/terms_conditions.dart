@@ -1,3 +1,4 @@
+import 'package:doc2heal_admin/view/bottombar_screen.dart';
 import 'package:doc2heal_admin/view/settigs_screen.dart';
 import 'package:doc2heal_admin/widgets/constants/appbar.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
       appBar: DeatialAppbar(
         text: 'Terms & conditions',
         onTap: () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => SettigsScreen())),
+            context, MaterialPageRoute(builder: (context) => BottomBarScreen())),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(

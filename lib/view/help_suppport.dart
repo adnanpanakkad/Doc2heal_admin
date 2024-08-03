@@ -1,3 +1,4 @@
+import 'package:doc2heal_admin/view/bottombar_screen.dart';
 import 'package:doc2heal_admin/widgets/constants/appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +12,8 @@ class HelpandSupport extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 238, 240, 242),
         appBar: DeatialAppbar(
           text: 'Help & support',
-          onTap: () {
-            Navigator.pop(context);
-          },
+          onTap: () => Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => BottomBarScreen())),
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(

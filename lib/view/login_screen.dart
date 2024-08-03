@@ -54,7 +54,6 @@ class LoginScreenState extends State<LoginScreen> {
                     AuthButton(
                       text: 'Sign in with Google',
                       onTap: () async {
-                        // Perform Google sign-in
                         await AuthenticationRepository.googleSignIn();
                         print('SIGIN IN GOOGLE ok');
                         // Once sign-in is successful, navigate to BottombarScreen
@@ -67,13 +66,7 @@ class LoginScreenState extends State<LoginScreen> {
                       imagpath: 'assets/2702602.png',
                     ),
                     const SizedBox(height: 20),
-                    // const Text('OR'),
                     const SizedBox(height: 20),
-                    // AuthButton(
-                    //   text: 'Sigin with mobile',
-                    //   onTap: () async {},
-                    //   imagpath: 'assets/smartphone-call_15874.png',
-                    // ),
                   ],
                 ),
               ),

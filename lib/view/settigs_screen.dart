@@ -32,7 +32,7 @@ class SettigsScreen extends StatelessWidget {
                 SizedBox(height: 20),
                 ListTile(
                   leading: const Icon(Icons.admin_panel_settings_outlined,
-                      color: Colors.black),
+                      color: Colors.purple),
                   title: Text('Terms & Conditions'),
                   onTap: () => Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
@@ -40,14 +40,14 @@ class SettigsScreen extends StatelessWidget {
                 ),
                 ListTile(
                   leading: const Icon(Icons.assignment_outlined,
-                      color: Colors.black),
+                      color: Colors.amber),
                   title: Text('Privacy Policy'),
                   onTap: () => Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                           builder: (context) => PrivacyPolicyScreen())),
                 ),
                 ListTile(
-                  leading: const Icon(Icons.help_outline, color: Colors.black),
+                  leading: const Icon(Icons.help_outline, color: Colors.blue),
                   title: Text('Help & Support'),
                   onTap: () => Navigator.of(context).pushReplacement(
                       MaterialPageRoute(

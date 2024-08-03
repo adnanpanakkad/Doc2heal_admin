@@ -1,3 +1,4 @@
+import 'package:doc2heal_admin/view/bottombar_screen.dart';
 import 'package:doc2heal_admin/widgets/constants/appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +10,8 @@ class PrivacyPolicyScreen extends StatelessWidget {
     return Scaffold(
       appBar: DeatialAppbar(
         text: 'Privacy Policy',
-        onTap: () {
-          Navigator.pop(context);
-        },
+        onTap: () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => BottomBarScreen())),
       ),
       body: const SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
