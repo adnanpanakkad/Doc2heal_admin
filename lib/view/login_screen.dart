@@ -1,5 +1,4 @@
 import 'package:doc2heal_admin/view/bottombar_screen.dart';
-import 'package:doc2heal_admin/view/home_screen.dart';
 import 'package:doc2heal_admin/services/firebase/firebase_auth.dart';
 import 'package:doc2heal_admin/widgets/auth_button.dart';
 import 'package:doc2heal_admin/widgets/constants/custom_textstyle.dart';

@@ -4,7 +4,6 @@ import 'package:doc2heal_admin/view/privacy_policy.dart';
 import 'package:doc2heal_admin/view/terms_conditions.dart';
 import 'package:doc2heal_admin/widgets/constants/custom_popup.dart';
 import 'package:doc2heal_admin/widgets/constants/custom_textstyle.dart';
-import 'package:doc2heal_admin/widgets/home/appbar.dart';
 import 'package:doc2heal_admin/widgets/settings/detail_container.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
