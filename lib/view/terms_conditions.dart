@@ -1,5 +1,4 @@
 import 'package:doc2heal_admin/view/bottombar_screen.dart';
-import 'package:doc2heal_admin/view/settigs_screen.dart';
 import 'package:doc2heal_admin/widgets/constants/appbar.dart';
 import 'package:flutter/material.dart';
 

@@ -51,7 +51,7 @@ class DoctorDetailsScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            rowTile('Name', doctorData!['name']),
+                            rowTile('Name', 'Dr. ${doctorData!['name']}'),
                             rowTile('Birthday', doctorData!['birthday']),
                             rowTile('Phone', doctorData!['phone']),
                             rowTile('Gender', doctorData!['gender']),

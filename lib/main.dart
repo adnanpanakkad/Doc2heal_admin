@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'doc2heal_admin',
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),

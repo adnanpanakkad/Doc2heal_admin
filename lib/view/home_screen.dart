@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                         .grey[200], // Optional: Set background color for avatar
                   ),
                   title: Text(
-                    doctorData['name'] ?? '',
+                    'Dr. ${doctorData['name']}' ?? '',
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
